@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageMatche"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+
+        <TextView
+            android:id="@+id/nomOrganisateur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/imageMatche"
+            android:layout_toRightOf="@id/imageMatche"
+            android:text="nom organisateur"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+
+
+        <TextView
+            android:id="@+id/lieu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nomOrganisateur"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/imageMatche"
+            android:layout_toRightOf="@id/imageMatche"
+            android:text="lieu"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/adresse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lieu"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/imageMatche"
+            android:layout_toRightOf="@id/imageMatche"
+            android:text="adresse"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/adresse"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/imageMatche"
+            android:layout_toRightOf="@id/imageMatche"
+            android:text="date"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:id="@+id/horaire"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/imageMatche"
+            android:layout_toRightOf="@id/imageMatche"
+            android:text="horaire"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/typeTerrain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/horaire"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/imageMatche"
+            android:layout_toRightOf="@id/imageMatche"
+            android:text="type de terraine"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/participer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/typeTerrain"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/imageMatche"
+            android:layout_toRightOf="@id/imageMatche"
+            android:background="@color/blue"
+            android:text="participer"
+            android:textColor="@android:color/background_light" />
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

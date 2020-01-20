@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FicheActivity">
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="80dp"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="TODO" />
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        tools:srcCompat="@android:drawable/sym_def_app_icon"
+        android:contentDescription="TODO" />
+
+
+    <TextView
+        android:id="@+id/lieu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/imageView"
+        android:layout_marginTop="10dp"
+        android:text="lieu"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/adresse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lieu"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+
+        android:text="adresse"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/adresse"
+        android:layout_marginTop="10dp"
+
+        android:gravity="center"
+        android:text="date"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/participe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date"
+        android:layout_marginTop="10dp"
+        android:background="@color/blue"
+        android:foregroundGravity="center"
+        android:layout_centerHorizontal="true"
+        android:text="participe"
+        android:textColor="@android:color/background_light" />
+
+
+</RelativeLayout>

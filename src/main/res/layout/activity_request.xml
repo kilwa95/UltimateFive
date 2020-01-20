@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RequestActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Request_friends_toolbar"
+        android:layout_width="407dp"
+        android:layout_height="69dp"
+        android:background="@color/yellow"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_request_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/Request_friends_toolbar"/>
+</RelativeLayout>

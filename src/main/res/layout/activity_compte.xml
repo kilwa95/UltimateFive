@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CompteActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/compte_toolbar"
+        android:layout_width="407dp"
+        android:layout_height="69dp"
+        android:background="@color/yellow"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_image"
+        android:layout_width="match_parent"
+        android:layout_height="124dp"
+        android:layout_below="@id/compte_toolbar"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="105dp"
+        android:src="@drawable/profile_image"
+        app:civ_border_color="@color/colorPrimary"
+        app:civ_border_width="5dp" />
+
+    <EditText
+        android:id="@+id/user_nom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_image"
+        android:hint="nom"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="13dp"
+        android:padding="10dp"
+        android:textColor="@color/colorPrimary"/>
+
+    <EditText
+        android:id="@+id/user_prenom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_nom"
+        android:hint="prenom"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="13dp"
+        android:padding="10dp"
+        android:textColor="@color/colorPrimary"/>
+
+
+    <EditText
+        android:id="@+id/user_ville"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_prenom"
+        android:hint="Ville"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="13dp"
+        android:padding="10dp"
+        android:textColor="@color/colorPrimary"/>
+
+
+    <EditText
+        android:id="@+id/user_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_ville"
+        android:hint="Age"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="13dp"
+        android:padding="10dp"
+        android:textColor="@color/colorPrimary"/>
+
+
+    <EditText
+        android:id="@+id/user_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_age"
+        android:hint="Email"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="13dp"
+        android:padding="10dp"
+        android:textColor="@color/colorPrimary"/>
+
+    <Button
+        android:id="@+id/Update_setting_buttom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_email"
+        android:text="Update"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="13dp"
+        android:padding="6dp"
+        android:background="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"/>
+
+
+
+</RelativeLayout>
