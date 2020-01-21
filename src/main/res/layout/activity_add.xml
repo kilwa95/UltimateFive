@@ -94,10 +94,23 @@
         android:layout_width="100dp"
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/type_text_view"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/duree_text_view"
         android:hint="Prix"
-        />
+        android:layout_alignParentLeft="true" />
+
+
+    <EditText
+        android:id="@+id/ville_text_view"
+        android:layout_width="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="70dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/type_text_view"
+        android:hint="ville"
+        android:layout_alignParentRight="true" />
    <TextView
        android:id="@+id/change_image_text_view"
        android:layout_width="wrap_content"

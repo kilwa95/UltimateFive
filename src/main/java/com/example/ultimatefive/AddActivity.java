@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,9 +35,10 @@ public class AddActivity extends AppCompatActivity {
     private DatabaseReference MatcheRef;
     private String cuuentUserId;
 
-    private TextView dateTextView,heuretextView,dureetextview,typeTextview,prixTextview;
+    private TextView dateTextView,heuretextView,dureetextview,typeTextview,prixTextview,villetextView;
     private ImageView imageMatcheview;
     private Button creeMatchbuttom;
+
 
 
     private Toolbar toolbar;
@@ -66,6 +68,7 @@ public class AddActivity extends AppCompatActivity {
         dureetextview=  findViewById(R.id.duree_text_view);
         typeTextview=  findViewById(R.id.type_text_view);
         prixTextview =  findViewById(R.id.prix_text_view);
+        villetextView = findViewById(R.id.ville_text_view);
         creeMatchbuttom = findViewById(R.id.cree_matche);
 
         creeMatchbuttom.setOnClickListener(new View.OnClickListener() {
@@ -132,33 +135,64 @@ public class AddActivity extends AppCompatActivity {
         String duree= dureetextview.getText().toString();
         String type = typeTextview.getText().toString();
         String prix = prixTextview.getText().toString();
+        String ville = villetextView.getText().toString();
+
+        String messageKey = MatcheRef.push().getKey();
 
 
-        HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put("date", date);
-        hashMap.put("heure", heure);
-        hashMap.put("duree",duree);
-        hashMap.put("type", type);
-        hashMap.put("prix",prix);
 
-        MatcheRef.child("Matches").child(cuuentUserId).setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task)
-            {
-                if(task.isSuccessful())
+
+
+
+
+
+
+
+        if (TextUtils.isEmpty(date)&&
+                TextUtils.isEmpty(heure)&&
+                TextUtils.isEmpty(duree)&&
+                TextUtils.isEmpty(type)&&
+                TextUtils.isEmpty(ville))
+        {
+            Toast.makeText(AddActivity.this,"veuiller remplir toute les champs...",Toast.LENGTH_SHORT).show();
+
+        }
+
+        else
+        {
+
+            HashMap<String, String> hashMap = new HashMap<>();
+            hashMap.put("date", date);
+            hashMap.put("heure", heure);
+            hashMap.put("duree",duree);
+            hashMap.put("type", type);
+            hashMap.put("prix",prix);
+            hashMap.put("ville",ville);
+
+            MatcheRef.child("Matches").child(messageKey).child(cuuentUserId).setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task)
                 {
-                    Toast.makeText(AddActivity.this, "matche saved ", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(AddActivity.this,ResulteActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
-                }
+                    if(task.isSuccessful())
+                    {
 
-                else
-                {
-                    Toast.makeText(AddActivity.this, "matche no saved  ", Toast.LENGTH_SHORT).show();
+
+                        Toast.makeText(AddActivity.this, "matche saved ", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(AddActivity.this,ResulteActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }
+
+                    else
+                    {
+                        Toast.makeText(AddActivity.this, "matche no saved  ", Toast.LENGTH_SHORT).show();
+                    }
                 }
-            }
-        });
+            });
+        }
+
+
+
 
     }
 
