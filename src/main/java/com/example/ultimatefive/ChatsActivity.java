@@ -123,6 +123,8 @@ public class ChatsActivity extends AppCompatActivity {
                 Message message = dataSnapshot.getValue(Message.class);
                 messageslist.add(message);
                 messageAdapter.notifyDataSetChanged();
+
+                messageRecyclerView.smoothScrollToPosition(messageRecyclerView.getAdapter().getItemCount());
             }
 
             @Override

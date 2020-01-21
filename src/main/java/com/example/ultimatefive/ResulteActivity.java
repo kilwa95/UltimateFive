@@ -24,7 +24,6 @@ public class ResulteActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     RecyclerView recyclerView;
-    MyAdapter myAdapter;
 
     private FirebaseUser firebaseUser;
     private FirebaseAuth mAuth;
@@ -49,8 +48,6 @@ public class ResulteActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.cyleVie);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        myAdapter = new MyAdapter(this, getMyList());
-        recyclerView.setAdapter(myAdapter);
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -108,54 +105,7 @@ public class ResulteActivity extends AppCompatActivity {
     }
 
 
-    private ArrayList<Model> getMyList() {
-        ArrayList<Model> models = new ArrayList<>();
 
-        Model m = new Model();
-        m.setNomOrganisateur("Khaled");
-        m.setImage(R.drawable.paris);
-        m.setAdresse("35 quai de grenelle");
-        m.setDate("12/2/2020");
-        m.setHoraire("13:18");
-        m.setTypeTerraine("grande terraine");
-        m.setLieu("paris");
-        models.add(m);
-
-
-        Model m2 = new Model();
-        m2.setNomOrganisateur("pierre");
-        m2.setImage(R.drawable.lyon);
-        m2.setAdresse("35 quai de grenelle");
-        m2.setDate("12/2/2020");
-        m2.setHoraire("13:18");
-        m2.setTypeTerraine("grande terraine");
-        m2.setLieu("lyon");
-        models.add(m2);
-
-
-        Model m3 = new Model();
-        m3.setNomOrganisateur("bastien");
-        m3.setImage(R.drawable.madrid);
-        m3.setAdresse("35 quai de grenelle");
-        m3.setDate("12/2/2020");
-        m3.setHoraire("13:18");
-        m3.setTypeTerraine("grande terraine");
-        m3.setLieu("lyon");
-        models.add(m3);
-
-
-        Model m4 = new Model();
-        m4.setNomOrganisateur("Martien");
-        m4.setImage(R.drawable.rome);
-        m4.setAdresse("35 quai de grenelle");
-        m4.setDate("12/2/2020");
-        m4.setHoraire("13:18");
-        m4.setTypeTerraine("grande terraine");
-        m4.setLieu("lyon");
-        models.add(m4);
-
-        return models;
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

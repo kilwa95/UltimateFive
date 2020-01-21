@@ -70,7 +70,7 @@ public class FindjoeursActivity extends AppCompatActivity {
                     @Override
                     protected void onBindViewHolder(@NonNull FindfreindsViewholder holder, final int position, @NonNull User model)
                     {
-                        holder.userName.setText(model.getPrenom());
+                        holder.userName.setText(model.getNom());
                         holder.userVille.setText(model.getVille());
                         Picasso.get().load(model.getImage()).placeholder(R.drawable.profile_image).into(holder.profileImage);
 

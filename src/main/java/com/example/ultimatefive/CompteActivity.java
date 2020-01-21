@@ -1,7 +1,6 @@
 package com.example.ultimatefive;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -10,9 +9,7 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +32,7 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class CompteActivity extends AppCompatActivity {
 
@@ -199,35 +197,31 @@ public class CompteActivity extends AppCompatActivity {
 
 
 
-        //recuperer l'image
+        Map<String, Object> hashMap= new HashMap<>();
+        hashMap.put("nom", updateNom);
+        hashMap.put("prenom",updateprenom);
+        hashMap.put("ville", updateville);
+        hashMap.put("age",updateAge);
+        hashMap.put("email", updateEmail);
 
+        reference.child("Users").child(currentUserID).updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
 
-            HashMap<String, String> hashMap = new HashMap<>();
-            hashMap.put("id", currentUserID);
-            hashMap.put("nom", updateNom);
-            hashMap.put("prenom",updateprenom);
-            hashMap.put("ville", updateville);
-            hashMap.put("age",updateAge);
-            hashMap.put("email", updateEmail);
+                if(task.isSuccessful()){
+                    Toast.makeText(CompteActivity.this,"profile uapdate sussfule",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(CompteActivity.this,profileActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                }
+                else {
+                    String message = task.getException().toString();
+                    Toast.makeText(CompteActivity.this,"Errore",Toast.LENGTH_SHORT).show();
 
-            reference.child("Users").child(currentUserID).setValue(hashMap)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
+                }
+            }
+        });
 
-                            if(task.isSuccessful()){
-                                Toast.makeText(CompteActivity.this,"profile uapdate sussfule",Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(CompteActivity.this,profileActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-                            }
-                            else {
-                                String message = task.getException().toString();
-                                Toast.makeText(CompteActivity.this,"Errore",Toast.LENGTH_SHORT).show();
-
-                            }
-                        }
-                    });
 
     }
 

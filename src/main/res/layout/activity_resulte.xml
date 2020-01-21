@@ -31,21 +31,14 @@
         android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/logo" />
 
-    <SearchView
-        android:id="@+id/SearchView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        android:layout_marginTop="40dp"
-        android:iconifiedByDefault="false"
-        android:queryHint=" ville , code postal" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cyleVie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/BoottomNavigation"
-        android:layout_below="@id/SearchView"
+        android:layout_below="@id/toolbar"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp" />
 

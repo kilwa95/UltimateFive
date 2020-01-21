@@ -19,7 +19,8 @@
         android:id="@+id/message_joeurs"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/chats_friends_toolbar">
+        android:layout_below="@id/chats_friends_toolbar"
+        android:layout_above="@+id/chat_linaire_layoute">
 
     </androidx.recyclerview.widget.RecyclerView>
 
