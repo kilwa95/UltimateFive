@@ -93,9 +93,6 @@ public class CompteActivity extends AppCompatActivity {
 
 
 
-
-
-
         UpdateAccountSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

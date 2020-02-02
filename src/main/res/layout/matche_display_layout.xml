@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="40dp">
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/rellier1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+       <de.hdodenhof.circleimageview.CircleImageView
+           android:id="@+id/imageView_userProfile"
+           android:layout_width="45dp"
+           android:layout_height="45dp"
+           android:src="@drawable/profile_image" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageView_userProfile"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="user Name"
+                android:textSize="18sp"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/user_description_matche"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textSize="15sp"
+                android:text=" description"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/type_matche"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="type de terraine"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/rellier1"/>
+
+
+
+    <TextView
+        android:id="@+id/date_matche"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="Date"
+        android:layout_marginTop="5dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/type_matche"/>
+
+    <ImageView
+        android:id="@+id/image_matche"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/matcher"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/date_matche"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginBottom="1dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_matche"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold"
+                android:text="prix:"/>
+
+            <TextView
+                android:id="@+id/prix_matche"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@android:color/background_dark"
+                android:text="prix"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold"
+                android:text="€"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginLeft="50dp"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold"
+                android:text="ville:"/>
+
+            <TextView
+                android:id="@+id/ville_matche"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@android:color/background_dark"
+                android:text="ville"/>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:layout_marginLeft="50dp"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold"
+                android:text="duree"/>
+
+
+            <TextView
+                android:id="@+id/duree_matche"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textColor="@android:color/background_dark"
+                android:textSize="17sp"
+                android:text="dureé:"/>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

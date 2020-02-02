@@ -15,6 +15,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
@@ -59,67 +60,72 @@ public class FriendsFragment extends Fragment {
         return freindsView;
     }
 
+
     @Override
     public void onStart()
     {
         super.onStart();
+
         FirebaseRecyclerOptions<User> options = new FirebaseRecyclerOptions.Builder<User>()
                 .setQuery(ContactRefernece,User.class)
                 .build();
         FirebaseRecyclerAdapter<User, freindViewholder> adapter =
-               new FirebaseRecyclerAdapter<User, freindViewholder>(options) {
-                   @Override
-                   protected void onBindViewHolder(@NonNull final freindViewholder holder, final int position, @NonNull final User model)
-                   {
-                       String user_id = getRef(position).getKey();
+                new FirebaseRecyclerAdapter<User, freindViewholder>(options) {
+                    @Override
+                    protected void onBindViewHolder(@NonNull final freindViewholder holder, final int position, @NonNull final User model)
+                    {
+                        String user_id = getRef(position).getKey();
 
-                       userRefernece.child(user_id).addValueEventListener(new ValueEventListener() {
-                           @Override
-                           public void onDataChange(@NonNull DataSnapshot dataSnapshot)
-                           {
-                               if (dataSnapshot.hasChild("image"))
-                               {
-                                   String retrivePrenom= dataSnapshot.child("prenom").getValue().toString();
-                                   String retriveville= dataSnapshot.child("ville").getValue().toString();
-                                   String retriveUserImage= dataSnapshot.child("image").getValue().toString();
+                        userRefernece.child(user_id).addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+                            {
+                                if (dataSnapshot.hasChild("image"))
+                                {
+                                    String retrivePrenom= dataSnapshot.child("prenom").getValue().toString();
+                                    String retriveville= dataSnapshot.child("ville").getValue().toString();
+                                    String retriveUserImage= dataSnapshot.child("image").getValue().toString();
 
-                                   holder.userName.setText(retrivePrenom);
-                                   holder.userVille.setText(retriveville);
-                                   Picasso.get().load(retriveUserImage).placeholder(R.drawable.profile_image).into(holder.profileImage);
+                                    holder.userName.setText(retrivePrenom);
+                                    holder.userVille.setText(retriveville);
+                                    Picasso.get().load(retriveUserImage).placeholder(R.drawable.profile_image).into(holder.profileImage);
 
-                               }
+                                }
 
-                               else
-                               {
-                                   String retrivePrenom= dataSnapshot.child("prenom").getValue().toString();
-                                   String retriveville= dataSnapshot.child("ville").getValue().toString();
+                                else
+                                {
+                                    String retrivePrenom= dataSnapshot.child("prenom").getValue().toString();
+                                    String retriveville= dataSnapshot.child("ville").getValue().toString();
 
-                                   holder.userName.setText(retrivePrenom);
-                                   holder.userVille.setText(retriveville);
-                               }
+                                    holder.userName.setText(retrivePrenom);
+                                    holder.userVille.setText(retriveville);
+                                }
 
-                           }
+                            }
 
-                           @Override
-                           public void onCancelled(@NonNull DatabaseError databaseError) {
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                           }
-                       });
+                            }
+                        });
 
-                   }
+                    }
 
-                   @NonNull
-                   @Override
-                   public freindViewholder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-                       View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.users_display_layout,viewGroup,false);
-                       freindViewholder viewholder = new freindViewholder(view);
-                       return viewholder;
-                   }
-               };
+                    @NonNull
+                    @Override
+                    public freindViewholder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+                        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.users_display_layout,viewGroup,false);
+                        freindViewholder viewholder = new freindViewholder(view);
+                        return viewholder;
+                    }
+                };
 
         friendsRecyclerView.setAdapter(adapter);
         adapter.startListening();
+
     }
+
+
 
 
     public static class freindViewholder extends RecyclerView.ViewHolder

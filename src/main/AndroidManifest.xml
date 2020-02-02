@@ -56,7 +56,8 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".InscriptionActivity" />
-        <activity android:name=".FicheActivity" />
+        <activity android:name=".FicheActivity"
+            android:parentActivityName=".ResulteActivity"/>
         <activity android:name=".ResulteActivity" />
         <activity android:name=".profileActivity" />
         <activity android:name=".MessageActivity" />

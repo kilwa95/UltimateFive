@@ -9,78 +9,195 @@
 
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbar_fiche"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/yellow"
         android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+        android:theme="?attr/actionBarTheme" />
 
 
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="80dp"
-        android:layout_height="55dp"
-        android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/logo"
-        android:contentDescription="TODO" />
+        android:id="@+id/fiche_image_matche"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_below="@id/toolbar_fiche"
+        android:layout_marginTop="2dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/matcher" />
 
 
-    <ImageView
-        android:id="@+id/imageView"
+    <TextView
+        android:id="@+id/date_text_view"
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_below="@id/toolbar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp"
-        tools:srcCompat="@android:drawable/sym_def_app_icon"
-        android:contentDescription="TODO" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fiche_image_matche"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="Date:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/fiche_date_matche"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/date_text_view"
+        android:layout_below="@id/fiche_image_matche"
+        android:text="Date"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@id/date_text_view" />
 
 
     <TextView
-        android:id="@+id/lieu"
-        android:layout_width="match_parent"
+        android:id="@+id/duree_text_view"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_below="@id/imageView"
-        android:layout_marginTop="10dp"
-        android:text="lieu"
-        android:textSize="24sp" />
+        android:layout_below="@id/date_text_view"
+        android:layout_centerHorizontal="false"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="Duree:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/adresse"
-        android:layout_width="match_parent"
+        android:id="@+id/fiche_duree_matche"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lieu"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/date_text_view"
+        android:layout_below="@id/fiche_date_matche"
+        android:text="duree"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@id/date_text_view" />
 
-        android:text="adresse"
-        android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/date"
-        android:layout_width="match_parent"
+        android:id="@+id/heure_text_view"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/adresse"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/duree_text_view"
+        android:layout_centerHorizontal="false"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="heure:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-        android:gravity="center"
-        android:text="date"
-        android:textSize="24sp" />
+    <TextView
+        android:id="@+id/fiche_heure_matche"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/date_text_view"
+        android:layout_below="@id/fiche_duree_matche"
+        android:text="heure"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@id/date_text_view" />
+
+
+    <TextView
+        android:id="@+id/prix_text_view"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heure_text_view"
+        android:layout_centerHorizontal="false"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="prix:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/fiche_prix_matche"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/date_text_view"
+        android:layout_below="@id/fiche_heure_matche"
+        android:text="prix"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@id/date_text_view" />
+
+
+    <TextView
+        android:id="@+id/type_text_view"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/prix_text_view"
+        android:layout_centerHorizontal="false"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="Type de terraine:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/fiche_type_matche"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/date_text_view"
+        android:layout_below="@id/fiche_prix_matche"
+        android:text="type terraine"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@id/date_text_view" />
+
+
+    <TextView
+        android:id="@+id/ville_text_view"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/type_text_view"
+        android:layout_centerHorizontal="false"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="ville:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/fiche_ville_matche"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/date_text_view"
+        android:layout_below="@id/fiche_type_matche"
+        android:text="ville"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@id/date_text_view" />
 
     <Button
-        android:id="@+id/participe"
-        android:layout_width="wrap_content"
+        android:id="@+id/participer_btn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/date"
-        android:layout_marginTop="10dp"
-        android:background="@color/blue"
-        android:foregroundGravity="center"
-        android:layout_centerHorizontal="true"
-        android:text="participe"
-        android:textColor="@android:color/background_light" />
+        android:layout_marginLeft="65dp"
+        android:layout_marginRight="65dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/cardview_light_background"
+        android:text="Participer"
+        android:textSize="20sp"
+        android:layout_below="@+id/ville_text_view"/>
+
+
+
+
 
 
 </RelativeLayout>

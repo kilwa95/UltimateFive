@@ -68,7 +68,7 @@ public class MessageActivity extends AppCompatActivity {
         //toolbar
         toolbar =  findViewById(R.id.toolbar_message);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("UltimateFive");
+        getSupportActionBar().setTitle("Messanger");
 
 
 

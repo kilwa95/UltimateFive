@@ -138,6 +138,7 @@ public class ProfilejoueurActivity extends AppCompatActivity {
 
                 }
 
+
                 else
                 {
                     ContactrequestRefrence.child(currentUserId).addValueEventListener(new ValueEventListener() {
