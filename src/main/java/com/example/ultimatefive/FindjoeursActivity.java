@@ -1,13 +1,5 @@
 package com.example.ultimatefive;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import de.hdodenhof.circleimageview.CircleImageView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,11 +18,21 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class FindjoeursActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
     private RecyclerView FindFriendsRecyclerView;
     private DatabaseReference userRefernece;
+
+
 
 
     @Override
@@ -42,6 +44,7 @@ public class FindjoeursActivity extends AppCompatActivity {
         // base de donnes
 
         userRefernece = FirebaseDatabase.getInstance().getReference().child("Users");
+
 
         FindFriendsRecyclerView = findViewById(R.id.find_freinds_RecyclerView);
         FindFriendsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -58,6 +61,8 @@ public class FindjoeursActivity extends AppCompatActivity {
     protected void onStart()
     {
         super.onStart();
+
+
         FirebaseRecyclerOptions<User> options = new FirebaseRecyclerOptions.Builder<User>()
                 .setQuery(userRefernece,User.class)
                 .build();
@@ -76,9 +81,14 @@ public class FindjoeursActivity extends AppCompatActivity {
                     @Override
                     protected void onBindViewHolder(@NonNull FindfreindsViewholder holder, final int position, @NonNull User model)
                     {
+
+
                         holder.userName.setText(model.getPrenom());
                         holder.userVille.setText(model.getVille());
                         Picasso.get().load(model.getImage()).placeholder(R.drawable.profile_image).into(holder.profileImage);
+
+
+
 
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -90,11 +100,13 @@ public class FindjoeursActivity extends AppCompatActivity {
                             }
                         });
 
+
                     }
                 };
 
         FindFriendsRecyclerView.setAdapter(adapter);
         adapter.startListening();
+
     }
 
 

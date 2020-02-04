@@ -145,6 +145,29 @@ public class FicheActivity extends AppCompatActivity {
 
     private void ManageRequest()
     {
+        participerreference.child(currentUserId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+            {
+                if (dataSnapshot.hasChild(getuserId))
+                {
+                    String request_type = dataSnapshot.child(getuserId).child("request_type").getValue().toString();
+
+                    if (request_type.equals("sent"))
+                    {
+                        currentState = "request_sent";
+                        participerbuttom.setText("Cancel participation Request");
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError)
+            {
+
+            }
+        });
         if (!currentUserId.equals(getuserId))
         {
             participerbuttom.setOnClickListener(new View.OnClickListener() {

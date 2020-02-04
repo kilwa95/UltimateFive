@@ -1,10 +1,5 @@
 package com.example.ultimatefive;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -37,6 +32,11 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.util.HashMap;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class AddActivity extends AppCompatActivity {
 
@@ -193,7 +193,7 @@ public class AddActivity extends AppCompatActivity {
                     String duree=  dataSnapshot.child("duree").getValue().toString();
                     String type =  dataSnapshot.child("type").getValue().toString();
                     String prix =  dataSnapshot.child("prix").getValue().toString();
-                    String ville =  dataSnapshot.child("ville").getValue().toString();
+                    String ville =  dataSnapshot.child("ville").getValue().toString().toLowerCase();
                     String description = dataSnapshot.child("description").getValue().toString();
 
 
@@ -233,7 +233,7 @@ public class AddActivity extends AppCompatActivity {
         String duree= dureetextview.getText().toString();
         String type = typeTextview.getText().toString();
         String prix = prixTextview.getText().toString();
-        String ville = villetextView.getText().toString();
+        String ville = villetextView.getText().toString().toLowerCase();
         String description = descriptionTextView.getText().toString();
 
         //String messageKey = MatcheRef.push().getKey();

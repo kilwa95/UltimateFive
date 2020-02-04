@@ -1,7 +1,6 @@
 package com.example.ultimatefive;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +14,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
@@ -96,7 +94,6 @@ public class FriendsFragment extends Fragment {
                                 {
                                     String retrivePrenom= dataSnapshot.child("prenom").getValue().toString();
                                     String retriveville= dataSnapshot.child("ville").getValue().toString();
-
                                     holder.userName.setText(retrivePrenom);
                                     holder.userVille.setText(retriveville);
                                 }

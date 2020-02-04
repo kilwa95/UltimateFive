@@ -1,10 +1,5 @@
 package com.example.ultimatefive;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.accounts.AccountManagerFuture;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,6 +18,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Objects;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class InscriptionActivity extends AppCompatActivity {
@@ -62,8 +61,8 @@ public class InscriptionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String nom = mNom.getText().toString();
-                String prenom = mprenom.getText().toString();
+                String nom = mNom.getText().toString().toLowerCase();
+                String prenom = mprenom.getText().toString().toLowerCase();
                 String ville= mville.getText().toString();
                 String age = mAge.getText().toString();
                 String email = mEmail.getText().toString();
